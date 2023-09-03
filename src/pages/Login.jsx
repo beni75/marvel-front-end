@@ -14,7 +14,7 @@ const Login = ({ handleToken }) => {
     try {
       setErrorMessage("");
       const response = await axios.post(
-        "http://site--marvel-back-end--7hx8pjwzyskf.code.run/user/login",
+        "https://site--marvel-back-end--7hx8pjwzyskf.code.run/user/login",
         {
           email,
           password,

@@ -15,18 +15,16 @@ const Signup = ({ handleToken }) => {
     setErrorMessage("");
     try {
       const response = await axios.post(
-        "http://site--marvel-back-end--7hx8pjwzyskf.code.run/user/signup",
+        "https://site--marvel-back-end--7hx8pjwzyskf.code.run/user/signup",
         {
           username: username,
           password: password,
           email: email,
         }
       );
-      console.log(response.data);
       handleToken(response.data.token);
       navigate("/characters");
     } catch (error) {
-      console.log(error.response.data.message);
       setErrorMessage(error.response.data.message);
     }
   };

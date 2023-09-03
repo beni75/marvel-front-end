@@ -10,7 +10,6 @@ const Accueil = () => {
   useEffect(() => {
     swiperElRef.current.addEventListener("progress", (e) => {
       const [swiper, progress] = e.detail;
-      console.log(progress);
     });
 
     swiperElRef.current.addEventListener("slidechange", (e) => {
