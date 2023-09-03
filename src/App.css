@@ -61,16 +61,16 @@ h1 {
   display: flex;
   justify-content: center;
   padding: 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ed1d24;
 }
 
 .header-top-logo img {
-  max-width: 100px; /* Ajustez la taille en fonction de votre logo */
+  max-width: 100px;
   transition: transform 0.2s ease;
 }
 
 .header-top-logo img:hover {
-  transform: scale(1.1); /* Augmentez légèrement la taille au survol */
+  transform: scale(1.1);
 }
 
 .header-link-container {
@@ -147,44 +147,92 @@ h1 {
 /* -- ACCUEIL ------------- */
 /* ---------------------- */
 
-.section1 {
-  margin-top: 50px;
+.swiper-slide-shadow-left {
+  background: #00000000;
+}
+
+.swiper-slide-shadow-right {
+  background: #00000000;
+}
+
+swiper-container::part(button-prev) {
+  padding-left: 5%;
+  color: #ed1d24 !important;
+}
+
+swiper-container::part(button-next) {
+  padding-right: 5%;
+  color: #ed1d24 !important;
+}
+
+swiper-container::part(bullet-active) {
+  background: white !important;
+}
+
+.section-container {
+  margin-top: 60px;
+  width: 100;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section1 {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
   background-image: url(./assets/Marvel-Teams-Return-Feature-and-Social-Media.avif);
   background-size: cover;
-  background-repeat: no-repeat; /* Empêche l'image de se répéter */
+  background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  border-radius: 40px;
+  z-index: 1;
 }
 
-.section2 {
-  height: 100vh;
-  background-image: url(./assets/fond-de-dessins-animés-superman-moderne-et-cru-produit-par-des-bandes-dessinées-cc-depuis-188637810.webp); /* Remplacez avec le chemin correct de votre deuxième image */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+.over::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.front h2,
+.front p,
+.front .link-home {
+  position: relative;
+  z-index: 2;
+}
+
+.section2 {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+  background-image: url(./assets/fond-de-dessins-animés-superman-moderne-et-cru-produit-par-des-bandes-dessinées-cc-depuis-188637810.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border-radius: 40px;
+}
+
+.section-contents-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  text-align: center;
-  font-size: 24px;
 }
 
 .content {
@@ -203,25 +251,19 @@ p {
 }
 
 .link-home {
-  /* Styles pour le lien sur la page d'accueil */
   font-size: 18px;
   font-weight: bold;
   color: #000000;
   text-decoration: none;
-  background-color: #ccc; /* Fond semi-transparent noir */
-  padding: 10px 20px; /* Marge intérieure du lien */
-  border-radius: 5px; /* Coins arrondis */
-  transition: background-color 0.3s ease; /* Transition de couleur au survol */
+  background-color: #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .link-home:hover {
   color: #ccc;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.9
-  ); /* Fond semi-transparent noir plus sombre au survol */
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* ---------------------- */
@@ -238,24 +280,23 @@ p {
 }
 
 .comics-input::placeholder {
-  color: #777; /* Couleur du texte de l'indication de saisie */
+  color: #777;
 }
 
 .comics-input:hover {
-  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+  border-color: #ed1d24;
 }
 
 .comics-input:focus {
-  outline: none; /* Supprime la bordure autour du champ actif */
-  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+  outline: none;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-/* Style de base pour les boutons de pagination */
 .pagination-button {
-  background-color: #000000; /* Couleur rouge caractéristique de Marvel */
-  color: #fff; /* Texte blanc */
-  padding: 10px 20px; /* Ajustez la taille du bouton */
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -263,13 +304,12 @@ p {
   transition: background-color 0.3s ease;
 }
 
-/* Style au survol */
 .pagination-button:hover {
-  background-color: #ff0000; /* Légèrement plus clair pour mettre en évidence le survol */
+  background-color: #ff0000;
 }
 
 /* ---------------------- */
-/* -- SECTION PERSONNAGES ------------- */
+/* --PERSONNAGES------------- */
 /* ---------------------- */
 
 .section-characters-bottom {
@@ -296,25 +336,25 @@ p {
 }
 
 .characters-input::placeholder {
-  color: #777; /* Couleur du texte de l'indication de saisie */
+  color: #777;
 }
 
 .characters-input:hover {
-  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+  border-color: #ed1d24;
 }
 
 .characters-input:focus {
-  outline: none; /* Supprime la bordure autour du champ actif */
-  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+  outline: none;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
 .character-section {
   margin-top: 100px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes égales */
-  gap: 100px 50px; /* Espacement de 50px entre les colonnes (horizontalement) et les lignes (verticalement) */
-  margin: 0 auto; /* Centre la section horizontalement */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px 50px;
+  margin: 0 auto;
   max-width: var(--max-container-width);
 }
 
@@ -335,14 +375,14 @@ p {
   justify-content: space-between;
   height: 100%;
   transform: scale(1);
-  transition: transform 0.2s ease, margin-bottom 0.2s ease; /* Ajoutez la transition pour le margin-bottom */
-  margin-bottom: 20px; /* Augmentez la marge inférieure pour ajouter un espace plus important */
+  transition: transform 0.2s ease, margin-bottom 0.2s ease;
+  margin-bottom: 20px;
 }
 
 .card:hover {
   transform: scale(1.05);
   background-color: #fbbebe;
-  margin-bottom: 30px; /* Augmentez la marge au survol pour éviter le chevauchement */
+  margin-bottom: 30px;
 }
 
 .card img {
@@ -396,7 +436,7 @@ p {
 .button:hover {
   background-color: #f1f0bc;
   color: #000;
-  transform: scale(1.05); /* Augmentez légèrement la taille au survol */
+  transform: scale(1.05);
 }
 
 .link-connexion {
@@ -411,18 +451,18 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  background-color: #e9484d; /* Couleur rouge caractéristique de Marvel */
-  color: #fff; /* Texte blanc */
+  background-color: #e9484d;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .button-connexion:hover {
-  background-color: #ed1c24; /* Légèrement plus clair pour mettre en évidence le survol */
+  background-color: #ed1c24;
 }
 .button-connexion:active {
-  transform: translateY(2px); /* Légèrement descendu au clic */
+  transform: translateY(2px);
 }
 
 .login-input {
@@ -435,17 +475,17 @@ p {
 }
 
 .login-input::placeholder {
-  color: #777; /* Couleur du texte de l'indication de saisie */
+  color: #777;
 }
 
 .login-input:hover {
-  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+  border-color: #ed1d24;
 }
 
 .login-input:focus {
-  outline: none; /* Supprime la bordure autour du champ actif */
-  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+  outline: none;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 /* ---------------------- */
 /* -- SIGNUP ------------- */
@@ -473,18 +513,18 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  background-color: #e9484d; /* Couleur rouge caractéristique de Marvel */
-  color: #fff; /* Texte blanc */
+  background-color: #e9484d;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .button-signup:hover {
-  background-color: #ed1c24; /* Légèrement plus clair pour mettre en évidence le survol */
+  background-color: #ed1c24;
 }
 .button-signup:active {
-  transform: translateY(2px); /* Légèrement descendu au clic */
+  transform: translateY(2px);
 }
 
 .signup-input {
@@ -497,17 +537,17 @@ p {
 }
 
 .signup-input::placeholder {
-  color: #777; /* Couleur du texte de l'indication de saisie */
+  color: #777;
 }
 
 .signup-input:hover {
-  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+  border-color: #ed1d24;
 }
 
 .signup-input:focus {
-  outline: none; /* Supprime la bordure autour du champ actif */
-  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+  outline: none;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 /* ---------------------- */
 /* -- Favoris ------------- */
