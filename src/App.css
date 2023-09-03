@@ -82,9 +82,11 @@ h1 {
   padding: 10px;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .link {
+  border-radius: 5px;
   padding: 8px 16px;
   font-size: 16px;
   font-weight: bold;
@@ -109,6 +111,7 @@ h1 {
   background-color: #eb8a8a;
   transition: background-color 0.3s ease;
   border: none;
+  border-radius: 5px;
 }
 
 .link-disconnect:hover {
@@ -126,6 +129,7 @@ h1 {
   background-color: #ebe58a;
   transition: background-color 0.3s ease;
   border: none;
+  border-radius: 5px;
 }
 
 .link-favorite:hover {
@@ -183,8 +187,8 @@ swiper-container::part(bullet-active) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  width: 70vw;
+  height: 75vh;
+  width: 75vw;
   background-image: url(./assets/Marvel-Teams-Return-Feature-and-Social-Media.avif);
   background-size: cover;
   background-repeat: no-repeat;
@@ -218,8 +222,8 @@ swiper-container::part(bullet-active) {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  width: 70vw;
+  height: 75vh;
+  width: 75vw;
   background-image: url(./assets/fond-de-dessins-animés-superman-moderne-et-cru-produit-par-des-bandes-dessinées-cc-depuis-188637810.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -269,6 +273,20 @@ p {
 /* ---------------------- */
 /* -- COMICS ------------- */
 /* ---------------------- */
+
+.section-comics-bottom {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comics-bottom-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
 
 .comics-input {
   width: 100%;

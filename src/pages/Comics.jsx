@@ -26,7 +26,7 @@ const Comics = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://site--marvel-back-end--7hx8pjwzyskf.code.run/comics?title=${search}&limit=${itemsPerPage}&skip=${
+        `https://site--marvel-back-end--7hx8pjwzyskf.code.run/comics?title=${search}&limit=${itemsPerPage}&skip=${
           (currentPage - 1) * itemsPerPage
         }`
       );
@@ -42,8 +42,8 @@ const Comics = () => {
     </div>
   ) : (
     <>
-      <section className="section-characters-bottom">
-        <div className="characters-bottom-wrapper">
+      <section className="section-comics-bottom">
+        <div className="comics-bottom-wrapper">
           <h1 style={{ textAlign: "center" }}>Les comics de Marvel</h1>
           <form onSubmit={handleSubmit}>
             <input

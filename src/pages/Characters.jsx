@@ -18,40 +18,44 @@ const Characters = () => {
     fetchData();
   }, [search]);
 
-  return (
-    <div>
-      {isLoading ? (
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-        </div>
-      ) : (
-        <div>
-          <h1>Les personnages de Marvel</h1>
+  return isLoading ? (
+    <div className="loading-container">
+      <div className="loading-spinner"></div>
+    </div>
+  ) : (
+    <>
+      <section className="section-characters-bottom">
+        <div className="characters-bottom-wrapper">
+          <h1 style={{ textAlign: "center" }}>Les personnages de Marvel</h1>
           <form>
             <input
+              className="characters-input"
               type="text"
               placeholder="Recherche ton personnage préféré"
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
             />
           </form>
-          <section className="character-section">
-            {characters.map((character) => {
-              const imagePath = `${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`;
-
-              return (
-                <div key={character.id} className="card">
-                  <Link to={`/character/${character.id}`}>
-                    <img src={imagePath} alt={character.name} />
-                  </Link>
-                  <h2>{character.name}</h2>
-                  <p>{character.description}</p>
-                </div>
-              );
-            })}
-          </section>
         </div>
-      )}
-    </div>
+      </section>
+
+      <section className="character-section">
+        {characters.map((character) => {
+          const imagePath = `${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`;
+
+          return (
+            <div key={character.id} className="card">
+              <Link to={`/character/${character.id}`}>
+                <img src={imagePath} alt={character.name} />
+              </Link>
+              <h2>{character.name}</h2>
+              <p>{character.description}</p>
+            </div>
+          );
+        })}
+      </section>
+    </>
   );
 };
 
