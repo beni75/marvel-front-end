@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --max-container-width: 1280px;
+}
+/* ---------------------- */
+/* -- BODY ------------- */
+/* ---------------------- */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 20px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------- */
+/* -- HEADER ------------- */
+/* ---------------------- */
+
+.header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  z-index: 999;
+}
+
+.header-top-logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-top-logo img {
+  max-width: 100px; /* Ajustez la taille en fonction de votre logo */
+  transition: transform 0.2s ease;
+}
+
+.header-top-logo img:hover {
+  transform: scale(1.1); /* Augmentez légèrement la taille au survol */
+}
+
+.header-link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-link-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: azure;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+.link:hover {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+}
+
+.link-disconnect {
+  padding: 8px 16px 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color: #eb8a8a;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.link-disconnect:hover {
+  background-color: #f1bcbc;
+  border: none;
+  cursor: pointer;
+}
+
+.link-favorite {
+  padding: 8px 16px 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color: #ebe58a;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.link-favorite:hover {
+  background-color: #f1f0bc;
+  border: none;
+  cursor: pointer;
+}
+
+.comics-btn-navigation-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* ---------------------- */
+/* -- ACCUEIL ------------- */
+/* ---------------------- */
+
+.section1 {
+  margin-top: 50px;
+  height: 100vh;
+  background-image: url(./assets/Marvel-Teams-Return-Feature-and-Social-Media.avif);
+  background-size: cover;
+  background-repeat: no-repeat; /* Empêche l'image de se répéter */
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.section2 {
+  height: 100vh;
+  background-image: url(./assets/fond-de-dessins-animés-superman-moderne-et-cru-produit-par-des-bandes-dessinées-cc-depuis-188637810.webp); /* Remplacez avec le chemin correct de votre deuxième image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.content {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.link-home {
+  /* Styles pour le lien sur la page d'accueil */
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  background-color: #ccc; /* Fond semi-transparent noir */
+  padding: 10px 20px; /* Marge intérieure du lien */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s ease; /* Transition de couleur au survol */
+}
+
+.link-home:hover {
+  color: #ccc;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); /* Fond semi-transparent noir plus sombre au survol */
+}
+
+/* ---------------------- */
+/* -- COMICS ------------- */
+/* ---------------------- */
+
+.comics-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.comics-input::placeholder {
+  color: #777; /* Couleur du texte de l'indication de saisie */
+}
+
+.comics-input:hover {
+  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+}
+
+.comics-input:focus {
+  outline: none; /* Supprime la bordure autour du champ actif */
+  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+}
+
+/* Style de base pour les boutons de pagination */
+.pagination-button {
+  background-color: #000000; /* Couleur rouge caractéristique de Marvel */
+  color: #fff; /* Texte blanc */
+  padding: 10px 20px; /* Ajustez la taille du bouton */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style au survol */
+.pagination-button:hover {
+  background-color: #ff0000; /* Légèrement plus clair pour mettre en évidence le survol */
+}
+
+/* ---------------------- */
+/* -- SECTION PERSONNAGES ------------- */
+/* ---------------------- */
+
+.section-characters-bottom {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters-bottom-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.characters-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.characters-input::placeholder {
+  color: #777; /* Couleur du texte de l'indication de saisie */
+}
+
+.characters-input:hover {
+  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+}
+
+.characters-input:focus {
+  outline: none; /* Supprime la bordure autour du champ actif */
+  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+}
+
+.character-section {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes égales */
+  gap: 100px 50px; /* Espacement de 50px entre les colonnes (horizontalement) et les lignes (verticalement) */
+  margin: 0 auto; /* Centre la section horizontalement */
+  max-width: var(--max-container-width);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.2s ease, margin-bottom 0.2s ease; /* Ajoutez la transition pour le margin-bottom */
+  margin-bottom: 20px; /* Augmentez la marge inférieure pour ajouter un espace plus important */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #fbbebe;
+  margin-bottom: 30px; /* Augmentez la marge au survol pour éviter le chevauchement */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  flex: 1;
+}
+
+/* ---------------------- */
+/* -- LOGIN ------------- */
+/* ---------------------- */
+
+.section-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #ebe58a;
+  color: #333;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #f1f0bc;
+  color: #000;
+  transform: scale(1.05); /* Augmentez légèrement la taille au survol */
+}
+
+.link-connexion {
+  color: #000;
+  cursor: pointer;
+}
+
+.button-connexion {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e9484d; /* Couleur rouge caractéristique de Marvel */
+  color: #fff; /* Texte blanc */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-connexion:hover {
+  background-color: #ed1c24; /* Légèrement plus clair pour mettre en évidence le survol */
+}
+.button-connexion:active {
+  transform: translateY(2px); /* Légèrement descendu au clic */
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-input::placeholder {
+  color: #777; /* Couleur du texte de l'indication de saisie */
+}
+
+.login-input:hover {
+  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+}
+
+.login-input:focus {
+  outline: none; /* Supprime la bordure autour du champ actif */
+  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+}
+/* ---------------------- */
+/* -- SIGNUP ------------- */
+/* ---------------------- */
+
+.section-signup {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-signup {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e9484d; /* Couleur rouge caractéristique de Marvel */
+  color: #fff; /* Texte blanc */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-signup:hover {
+  background-color: #ed1c24; /* Légèrement plus clair pour mettre en évidence le survol */
+}
+.button-signup:active {
+  transform: translateY(2px); /* Légèrement descendu au clic */
+}
+
+.signup-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-input::placeholder {
+  color: #777; /* Couleur du texte de l'indication de saisie */
+}
+
+.signup-input:hover {
+  border-color: #ed1d24; /* Couleur rouge caractéristique de Marvel */
+}
+
+.signup-input:focus {
+  outline: none; /* Supprime la bordure autour du champ actif */
+  border-color: #ff0000; /* Couleur légèrement plus claire pour mettre en évidence le focus */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère */
+}
+/* ---------------------- */
+/* -- Favoris ------------- */
+/* ---------------------- */
+
+.section-favoris {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
