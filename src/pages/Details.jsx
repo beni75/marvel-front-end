@@ -14,19 +14,15 @@ const Details = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://site--marvel-back-end--7hx8pjwzyskf.code.run/character/${id}`
+          `https://site--marvel-back-end--7hx8pjwzyskf.code.run/character/${id}`
         );
-
-        console.log(response);
+        console.log(response.data);
         setCharacterData(response.data);
-
         const comicsIds = await response.data.comics;
-        console.log(comicsIds);
-
         const comicsResponse = await Promise.all(
           comicsIds.map((comicId) =>
             axios.get(
-              `http://site--marvel-back-end--7hx8pjwzyskf.code.run/comic/${comicId}`
+              `https://site--marvel-back-end--7hx8pjwzyskf.code.run/comic/${comicId}`
             )
           )
         );
@@ -48,7 +44,7 @@ const Details = () => {
       <div className="loading-spinner"></div>
     </div>
   ) : (
-    <section>
+    <section className="section-details">
       <h1>Comics liés au personnage:</h1>
       {comicsData.map((comic) => (
         <div key={comic._id}>{comic.title}</div>

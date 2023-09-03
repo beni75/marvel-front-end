@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -12,6 +13,7 @@ const Characters = () => {
       const response = await axios.get(
         `https://site--marvel-back-end--7hx8pjwzyskf.code.run/characters?name=${search}`
       );
+      console.log(response.data);
       setCharacters(response.data.results);
       setIsLoading(false);
     };
@@ -45,8 +47,8 @@ const Characters = () => {
           const imagePath = `${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`;
 
           return (
-            <div key={character.id} className="card">
-              <Link to={`/character/${character.id}`}>
+            <div key={character._id} className="card">
+              <Link to={`/character/${character._id}`}>
                 <img src={imagePath} alt={character.name} />
               </Link>
               <h2>{character.name}</h2>
