@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = ({ token, handleToken }) => {
   return (
     <header className="header">
-      <Link to="http://site--marvel-back-end--7hx8pjwzyskf.code.run/characters">
+      <Link to="/accueil">
         <div className="header-top-logo">
           <img style={{ width: "130px" }} src={Logo} alt="Logo Marvel" />
         </div>
